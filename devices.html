@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Device</title>
+    <link rel="stylesheet" href="devices-styles.css">
+</head>
+<body>
+    <div class="devices-container">
+        <header>
+            <h1>Select a Device to Monitor</h1>
+        </header>
+
+        <main>
+            <div class="devices-grid">
+                <div class="device-card">
+                    <h2>Lamp 1</h2>
+                    <p>Status: Active</p>
+                    <button onclick="window.location.href='lamp1-dashboard.html'">View Lamp 1</button>
+                </div>
+                <div class="device-card">
+                    <h2>Lamp 2</h2>
+                    <p>Status: Inactive</p>
+                    <button onclick="window.location.href='lamp2-dashboard.html'">View Lamp 2</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 Circuit Safety Solutions</p>
+        </footer>
+    </div>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.devices-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.devices-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.device-card {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 45%;
+}
+
+.device-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.device-card p {
+    margin-bottom: 15px;
+    color: #777;
+}
+
+button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1c86ee;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+</style>
+</body>
+</html>

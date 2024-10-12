@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Leakage Monitor</title>
+    <link rel="stylesheet" href="intro-styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Welcome to the Leakage Monitor System</h1>
+        </header>
+
+        <main>
+            <div class="app-intro">
+                <p>Monitor your electrical devices to ensure safety and efficiency. This system helps detect leakage currents and potential issues in real-time.</p>
+            </div>
+            <button class="link-btn" onclick="window.location.href='devices.html'">
+                Get Started
+            </button>
+        </main>
+
+        <footer>
+            <p>© 2024 Circuit Safety Solutions</p>
+        </footer>
+    </div>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.app-intro p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.link-btn {
+    background-color: #1e90ff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.link-btn:hover {
+    background-color: #1c86ee;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+</style>
+</body>
+</html>

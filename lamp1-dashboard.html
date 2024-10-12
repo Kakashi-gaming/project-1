@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp 1 Dashboard</title>
+    <link rel="stylesheet" href="lamp-dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Lamp 1 - Monitoring</h1>
+        </header>
+
+        <main>
+            <div class="status">
+                <p>Live Wire Current: <span id="liveCurrent">2.1</span> A</p>
+                <p>Neutral Wire Current: <span id="neutralCurrent">2.0</span> A</p>
+                <p>Difference: <span id="difference">0.1</span> A</p>
+            </div>
+            <div id="warning" class="hidden">
+                <p>⚠️ Warning: Leakage Detected!</p>
+            </div>
+        </main>
+
+        <footer>
+            <button onclick="window.location.href='devices.html'">Devices List</button>
+        </footer>
+    </div>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent black background for contrast */
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+    max-width: 500px;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f0c674;
+}
+
+.status {
+    margin-bottom: 20px;
+}
+
+.status p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+#liveCurrent, #neutralCurrent, #difference {
+    font-weight: bold;
+    color: #f0c674;
+}
+#warning {
+    background-color: rgba(255, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+.hidden {
+    display: none;
+}
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1c86ee;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+</stlyle>
+    <script>
+const THRESHOLD = 0.5; 
+let liveCurrent = 0;
+let neutralCurrent = 0;
+
+function updateUI(live, neutral, difference) {
+    document.getElementById("liveCurrent").innerText = live;
+    document.getElementById("neutralCurrent").innerText = neutral;
+    document.getElementById("difference").innerText = difference;
+
+    if (difference > THRESHOLD) {
+        document.getElementById("warning").classList.remove("hidden");
+    } else {
+        document.getElementById("warning").classList.add("hidden");
+    }
+}
+
+setInterval(() => {
+    liveCurrent = (Math.random() * 10).toFixed(2); 
+    neutralCurrent = (Math.random() * 10).toFixed(2); 
+    let difference = Math.abs(liveCurrent - neutralCurrent).toFixed(2); 
+    updateUI(liveCurrent, neutralCurrent, difference);
+}, 2000);
+    </script>
+</body>
+</html>
